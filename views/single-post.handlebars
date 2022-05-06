@@ -1,0 +1,25 @@
+<article class="post">
+  <div class="title">
+    <a href="{{post.postUrl}}" target="_blank">{{post.title}}</a>
+    <span>({{post.postUrl}})</span>
+  </div>
+</article>
+
+{{#if loggedIn}}
+<form class="commentForm">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">add comment</button>
+  </div>
+</form>
+{{/if}}
+
+{{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+<script src="/javascript/upvote.js"></script>
+{{/if}}

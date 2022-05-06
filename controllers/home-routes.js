@@ -7,12 +7,12 @@ router.get('/', (req, res) => {
     console.log(req.session);
     console.log('======================')
     Post.findAll({
-        attributes: ['id', 'post', 'title', 'created_at'],
+        attributes: ['id', 'post', 'title', 'created'],
 
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                attributes: ['id', 'commentText', 'postId', 'userId', 'created'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -23,8 +23,8 @@ router.get('/', (req, res) => {
                 attributes: ['username']
             }
         ]
-    }).then(dbPostData => {
-        const posts = dbPostData.map(post => post.get({ plain: true }));
+    }).then(postData => {
+        const posts = postData.map(post => post.get({ plain: true }));
         res.render('homepage', { posts, loggedIn: req.session.loggedIn });
     }).catch(err => {
         console.log(err);
@@ -37,12 +37,12 @@ router.get('post/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes: ['id', 'post', 'title', 'created_at'],
+        attributes: ['id', 'post', 'title', 'created'],
 
         include: [
             {
                 model: Comment, 
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                attributes: ['id', 'commentText', 'postId', 'userId', 'created'],
                 include: {
                     User,
                     attributes: ['username']
@@ -53,9 +53,9 @@ router.get('post/:id', (req, res) => {
                 attributes: ['username'],
             }
         ]
-    }).then(dbPostData => {
-        if (dbPostData) {
-            const post = dbPostData.get({ plain: true });
+    }).then(postData => {
+        if (postData) {
+            const post = postData.get({ plain: true });
 
             res.render('single-post', {
                 post,
