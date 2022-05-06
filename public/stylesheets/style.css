@@ -7,22 +7,18 @@ body, html {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    color: #333;
+    color: whitesmoke;
 }
   
 a {
     text-decoration: none;
-    color: #225ca3;
+    color: black;
     font-weight: bold;
     transition: color .1s;
 }
   
-a:hover {
-    color: #3486eb;
-}
-  
 button {
-    background-color: #225ca3;
+    background-color: grey;
     border: 0;
     padding: 1%;
     color: white;
@@ -32,24 +28,20 @@ button {
     border-radius: 5px;
 }
   
-button:hover {
-    background-color: #3486eb;
-}
-  
-.post-list {
-    margin: 0;
-    padding: 0;
+.postList {
+    margin: auto;
+    padding: auto;
 }
   
 textarea, input {
     padding: .5%;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid whitesmoke;
 }
   
 textarea:focus, input:focus {
     outline: none;
-    border: 1px solid #3486eb;
+    border: 1px solid grey;
 }
   
 textarea {
@@ -75,7 +67,7 @@ form label {
 }
   
 header {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid whitesmoke;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,7 +75,7 @@ header {
 }
   
 header h1 {
-    font-size: 1em;
+    font-size: 5px;
 }
   
 main {
@@ -95,84 +87,65 @@ main {
     background: none;
     border: none;
     padding: 0;
-    cursor: pointer;
     text-decoration: none;
-    color: #225ca3;
+    color: grey;
     font-size: 100%;
     font-weight: bold;
     transition: color .1s;
-    margin-left: 16px;
+    margin-left: 18px;
 }
   
-.btn-no-style:hover {
-    background: none;
-    color: #3486eb;
+
+  
+.deleteFunctionbtn {
+    background-color: blue;
 }
   
-.delete-post-btn {
-    background-color: #d41414;
-}
-  
-.delete-post-btn:hover {
-    background-color: #ff643d;
-}
-  
-.post {
-    margin-bottom: 2%;
+.posts {
+    margin-bottom: 4px;
     line-height: 150%;
 }
   
-.post .title span {
+.posts .title span {
     font-style: italic;
     font-size: 90%;
-    color: #7d7d7d;
+    color: grey;
 }
   
-.edit-link {
+.editLink {
     display: block;
-    margin: -1.5% 0 2% 0;
+    margin: -3.5px 0 4px 0;
+}
+
+  
+.commentForm {
+    margin-bottom: 5px;
 }
   
-.upvote-btn {
-    background-color: #197d0f;
-    transition: background-color .1s;
+.comments {
+    padding: 10px;
+    margin-bottom: 10px;
 }
   
-.upvote-btn:hover {
-    background-color: #1f9c13;
-}
+
   
-.comment-form {
-    margin-bottom: 5%;
-}
-  
-.comment {
-    padding: 1%;
-    margin-bottom: 1%;
-}
-  
-.comment:nth-child(odd) {
-    background-color: #fff5eb;
-}
-  
-.comment .meta {
+.comments .meta {
     font-size: 90%;
-    margin-bottom: .5%;
-    opacity: .6;
+    margin-bottom: .10px;
 }
   
-.new-post-form input {
+.newPage input {
     width: 300px;
 }
   
-.edit-post-form {
-    margin-bottom: 5%;
+.editFunction {
+    margin-bottom: 10px;
 }
   
 footer {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid whitesmoke;
     display: flex;
     justify-content: center;
-    padding: 1%;
+    padding: 5px;
     font-size: 110%;
 }
