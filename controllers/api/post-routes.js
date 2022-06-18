@@ -29,6 +29,7 @@ router.get('/', (req, res) => {
       });
 });
 
+// get user with ID
 router.get('/:id', (req, res) => {
     Post.findOne({
         where: {
@@ -62,6 +63,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// create post
 router.post('/', (req, res) => {
      Post.create({
         title: req.body.title,
@@ -75,6 +77,7 @@ router.post('/', (req, res) => {
     
 });
 
+// Update
 router.put('/:id', (req, res) => {
     Post.update({
         title: req.body.title,
@@ -96,6 +99,7 @@ router.put('/:id', (req, res) => {
     }); 
 });
 
+// delete
 router.delete('/:id', (req, res) => {
     console.log('id', req.params.id);
     Post.destroy({

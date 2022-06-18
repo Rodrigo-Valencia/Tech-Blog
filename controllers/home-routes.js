@@ -32,6 +32,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// homepage post with ID
 router.get('post/:id', (req, res) => {
     Post.findOne({
         where: {
@@ -70,6 +71,7 @@ router.get('post/:id', (req, res) => {
     });
 });
 
+// homepage login form
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -78,6 +80,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// homepage signup form
 router.get('/sign-up', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
